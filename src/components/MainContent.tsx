@@ -23,6 +23,7 @@ export default function MainContent() {
                 />
                 <div className="text-container flex items-center justify-center flex-wrap ml-2 mt-5 font-semibold gap-y-[5px]">
                     <span className="bg-gradient-to-r from-[#FF8660] to-[#9A33FF] text-transparent bg-clip-text text-3xl text-center">
+                        {/* eslint-disable-next-line react/no-unescaped-entities */}
                         I&apos;m Hruday Gurram  &nbsp;
                     </span>
                     <span className="text-2xl text-center">
