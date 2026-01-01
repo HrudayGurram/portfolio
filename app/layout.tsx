@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="fixed z-auto top-0 w-full">
+        {/* <header className="fixed z-auto top-0 w-full">
           <div className="bg-[#222222] min-h-[80]">
             <div className="flex items-center justify-around min-h-[80]">
               <span>Home</span>
@@ -37,8 +37,9 @@ export default function RootLayout({
               <span>Contact</span>
             </div>
           </div>
-        </header>
-        <div className="mt-[80px]">
+        </header> */}
+        {/* <div className="mt-[80px]"> */}
+        <div>
           {children}
         </div>
         <footer className="flex items-center w-full justify-around min-h-[80] bg-[#222222] text-gray-300 p-16">
