@@ -1,7 +1,11 @@
-import Image from "next/image";
+'use client';
 
-export default function Technology (props:{
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
+export default function Technology(props: {
     imagePath: string,
+    imageLightPath?: string,
     techName: string,
     width: number,
     height: number,
@@ -10,12 +14,30 @@ export default function Technology (props:{
 }) {
     const {
         imagePath,
+        imageLightPath,
         techName,
         width,
         height,
         id,
         className
     } = props;
+
+    const [isDarkMode, setIsDarkMode] = useState(true);
+
+    useEffect(() => {
+        const isDark = document.documentElement.classList.contains('dark');
+        setIsDarkMode(isDark);
+
+        const observer = new MutationObserver(() => {
+            setIsDarkMode(document.documentElement.classList.contains('dark'));
+        });
+
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+        return () => observer.disconnect();
+    }, []);
+
+    const currentImagePath = !isDarkMode && imageLightPath ? imageLightPath : imagePath;
     return (
         <>
             <div
@@ -23,7 +45,7 @@ export default function Technology (props:{
                 className={`flex items-center justify-center font-semibold flex-col mt-2.5 md:mt-0 ${className}`}
             >
                 <Image
-                    src={imagePath}
+                    src={currentImagePath}
                     alt={techName}
                     width={width}
                     height={height}

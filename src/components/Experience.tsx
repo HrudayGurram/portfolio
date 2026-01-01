@@ -23,9 +23,10 @@ export default function Experience() {
                 />
                 <Technology
                     id={'NextJS'}
-                    imagePath={'/nextjs.svg'}
-                    width={70}
-                    height={70}
+                    imagePath={'/nextjs_dark.svg'}
+                    imageLightPath={'/nextjs_light.svg'}
+                    width={60}
+                    height={60}
                     techName={'Next.js'}
                 />
                 <Technology
